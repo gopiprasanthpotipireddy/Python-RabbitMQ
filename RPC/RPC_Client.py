@@ -29,7 +29,7 @@ class FibonacciRpcClient(object):
             routing_key='rpc_queue',
             properties=pika.BasicProperties(
                 reply_to=self.callback_queue,
-                correlation_id=self.corr_id,
+                correlation_id=self.corr_id, 
             ),
             body=str(n))
         while self.response is None:
